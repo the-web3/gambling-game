@@ -24,38 +24,43 @@ forge install OpenZeppelin/openzeppelin-contracts-upgradeable --no-commit
 forge install OpenZeppelin/openzeppelin-contracts --no-commit
 ```
 
-### 6. 生成映射文件
+### 6. git 安装项目依赖
+```
+git submodule update --init --recursive --remote
+```
+
+### 7. 生成映射文件
 ```
 forge remappings > remappings.txt
 ```
 
-### 7.合约编译
+### 8.合约编译
 ```
 forge compile
 ```
 
-### 8.合约构建
+### 9.合约构建
 ```
 forge build
 ```
 
-### 9.合约测试
+### 10.合约测试
 ```
 forge test
 ```
 
-### 10.合约部署
+### 11.合约部署
 ```
 forge script ./script/GamblingGameDepolyer.s.sol:GamblingGameDepolyer --rpc-url  https://eth-holesky.g.alchemy.com/v2/xis9zzUnd3ts5uZmF9BipBpeWfcYBNzb --private-key $PRIVATEKEY```
 ```
 
-### 11.合约验证
+### 12.合约验证
 ```
 export ETHERSCAN_API_KEY=HZEZGEPJJDA633N421AYW9NE8JFNZZC7JT
 forge verify-contract 0x516c3076Fb43eB158F97A66aad52a96Da8343A5E GamblingGame --compiler-version 0.8.0
 ```
 
-### 12. Cast 命令使用
+### 13. Cast 命令使用
 
 #### call 方法
 ```
@@ -72,7 +77,7 @@ cast call --rpc-url https://eth-holesky.g.alchemy.com/v2/3ewO7IUWDTEW5xiFDtUCZoa
 cast send --rpc-url https://eth-holesky.g.alchemy.com/v2/xis9zzUnd3ts5uZmF9BipBpeWfcYBNzb  --private-key $PRIVATEKEY --from 0xe3b4ECd2EC88026F84cF17fef8bABfD9184C94F0  0xD0bbDDDf88b350b1220b192A42Cddd82251828C0 "setBetteToken(address,uint256)" 0x7F82C801D1778fC42Df04c22f532C5B18bB3ba0F 18
 ```
 
-### 13. 启动本地 anvil 节点
+### 14. 启动本地 anvil 节点
 
 ```
 anvil
